@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textproject = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textstate = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -51,12 +51,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 281);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // textproject
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 31);
-            this.textBox1.TabIndex = 1;
+            this.textproject.Location = new System.Drawing.Point(45, 46);
+            this.textproject.Name = "textproject";
+            this.textproject.Size = new System.Drawing.Size(150, 31);
+            this.textproject.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
@@ -93,39 +93,43 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "State";
             // 
-            // textBox2
+            // textstate
             // 
-            this.textBox2.Location = new System.Drawing.Point(567, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 31);
-            this.textBox2.TabIndex = 7;
+            this.textstate.Location = new System.Drawing.Point(567, 46);
+            this.textstate.Name = "textstate";
+            this.textstate.Size = new System.Drawing.Size(150, 31);
+            this.textstate.TabIndex = 7;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
             this.button1.Location = new System.Drawing.Point(57, 95);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 30);
+            this.button1.Size = new System.Drawing.Size(114, 48);
             this.button1.TabIndex = 8;
             this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Location = new System.Drawing.Point(188, 95);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 30);
+            this.button2.Size = new System.Drawing.Size(114, 48);
             this.button2.TabIndex = 9;
             this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Firebrick;
             this.button3.Location = new System.Drawing.Point(326, 95);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 30);
+            this.button3.Size = new System.Drawing.Size(114, 48);
             this.button3.TabIndex = 10;
             this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -135,30 +139,36 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textstate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textproject);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private TextBox textproject;
         private DateTimePicker dateTimePicker1;
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox textstate;
         private Button button1;
         private Button button2;
         private Button button3;
