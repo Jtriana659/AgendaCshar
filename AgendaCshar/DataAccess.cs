@@ -77,6 +77,39 @@ namespace AgendaCshar
                 }
             }
         }
+
+        public void ActualizarActividad(Actividad listaActividad) 
+        {
+        using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE Agenda SET Tarea=@Tarea, Date=@Date, Status=@Status WHERE Id=@Id";
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Tarea", listaActividad.Tarea);
+                    cmd.Parameters.AddWithValue("@Date", listaActividad.Date);
+                    cmd.Parameters.AddWithValue("@Status", listaActividad.Status);
+                    cmd.Parameters.AddWithValue("@Id", listaActividad.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        
+        }
+
+        public void EliminarActividad(int id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM Agenda WHERE Id=@Id";
+                using (SQLiteCommand cmd = new SQLiteCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     
     }
 }

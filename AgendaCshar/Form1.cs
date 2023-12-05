@@ -46,6 +46,33 @@ namespace AgendaCshar
             textproject.Text = "";
             textstate.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Actividad actividadSeleccionada = (Actividad)dataGridView1.SelectedRows[0].DataBoundItem;
+                actividadSeleccionada.Tarea = textproject.Text;
+                actividadSeleccionada.Date = dateTimePicker1.Value;
+                actividadSeleccionada.Status = textstate.Text;
+
+                dataAccess.ActualizarActividad(actividadSeleccionada);
+                cargarActividades();
+                limpiarCampos();
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int id = ((Actividad)dataGridView1.SelectedRows[0].DataBoundItem).Id;
+                dataAccess.EliminarActividad(id);
+                cargarActividades();
+                limpiarCampos();
+            }
+        }
     }
 }
 
